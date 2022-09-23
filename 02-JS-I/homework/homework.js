@@ -227,22 +227,13 @@ function esVocal(letra){
   // Si no es vocal, tambien debe devolver "Dato incorrecto".
   //Escribe tu código aquí
 
-  vocales = ['a','e','i','o','u'];    
+  const vocales = ['a','e','i','o','u'];    
     
-   if (letra.length == 1) {
+  if (letra.length !== 1) { return 'Dato incorrecto'; }
     
-    let band = false;
-    for (let i = 0; i < vocales.length; i++) {
-                
-        if (letra == vocales[i]) {            
-            band = true;
-            i = vocales.length; 
-        }
-    }
-
-    if (band) { return 'Es vocal'; } else { return 'Dato incorrecto'; }
+  if (vocales.includes(letra.toLowerCase())) { return 'Es vocal'; }
     
-   }else { return 'Dato incorrecto'; }
+  return 'Dato incorrecto';
   
 }
 
